@@ -1,20 +1,24 @@
-# RemoteAugment Web Scraper & Crawler
+# Scrapy Web Scraper Project
 
-A powerful and lightweight Python-based web scraping tool designed to extract structured data from `remoteaugment.com`. It includes scripts for targeted component scraping as well as full-site multi-page crawling.
+This project is a migration of a BeautifulSoup-based web scraper into a robust, clean, and highly scalable Scrapy project.
 
-## 🚀 Features
-- **Targeted Scraping:** Extracts service headers, sub-headings, and structural details.
-- **Deep Web Crawling:** Automatically discovers internal links, visits multiple pages, avoids duplicate links, and maps the entire website.
-- **Structured Output:** Exports cleaned data directly into organized CSV files with URL tagging.
+## Features Implemented
+- **Scrapy Architecture:** Organized codebase using Spiders, Items, and Pipelines.
+- **Pipeline Storage:** Cleans and writes incoming scraped data safely into a structured CSV file (`scraped_output.csv`).
+- **Pagination Handling:** Automatically crawls through 4 consecutive pages of the target website.
+- **Anti-Blocking System:** Custom download delays (2 seconds) and realistic User-Agent headers configured in `settings.py`.
+- **Logging:** Leverages Scrapy's built-in logger to keep track of requests, page counts, and storage processes.
 
-## 🛠️ Tech Stack & Libraries
-- **Language:** Python 3.10+
-- **Libraries:** - `requests` (for handling HTTP requests)
-  - `beautifulsoup4` (for HTML parsing and data extraction)
+## How to Setup and Run This Scraper
 
-## 📋 Installation & Usage
+### Prerequisites
+Make sure you have Python installed on your Windows machine.
 
-1. Clone or download this repository.
-2. Install the required dependencies:
-   ```bash
-   pip install requests beautifulsoup4
+### 1. Set Up Virtual Environment & Activate
+Navigate to the project directory using Windows PowerShell:
+```powershell
+# Set script execution policy if restricted
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+
+# Activate the virtual environment
+.\venv\Scripts\Activate.ps1
